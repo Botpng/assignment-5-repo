@@ -19,46 +19,52 @@
 <body class="hind-madurai max-w-[1920px]">
 
     <!-- heading  part-->
+
     <div class="flex justify-between px-[10px] sm:px-[40px] py-2">
+
         <div class="flex items-center justify-center">
             <img class="h-[50px] w-[50px]" src="./assets/logo.png" alt="">
             <h1 class="ml-2 text-[#006747]
             font-black">Emergency <br> Service</h1>
         </div>
+
+        <!-- mobile view -->
         <div class="sm:hidden dropdown dropdown-left">
             <div tabindex="0" role="button" class="btn m-1"><i class="fa-solid fa-bars"></i></div>
             <ul tabindex="0"
                 class="dropdown-content menu bg-base-100 rounded-box z-1 p-2 shadow-sm gap-1 justify-center">
                 <div class="flex bg-[#41ff6b1a] rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p class="font-black">0</p>
+                    <p class="favourite font-black">0</p>
                     <img class="h-[30px] w-[30px]" src="./assets/heart.png" alt="">
                 </div>
-                <div id="coin-amount"
-                    class="flex bg-[#41ff6b1a] rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p id="available-balance" class="font-black">100</p>
+                <div class="flex bg-[#41ff6b1a] rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
+                    <p class="available-balance font-black">100</p>
                     <img class="h-[24px] w-[24px]" src="./assets/coin.png" alt="">
                 </div>
                 <div
                     class="flex font-bold text-white bg-green-500 rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p class="font-bold">2</p>COPY
+                    <p class="copy-count">0</p>
+                    <p>COPY</p>
                 </div>
             </ul>
         </div>
 
+        <!-- big view -->
         <div class="hidden sm:block">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center gap-2">
                 <div class="flex bg-[#41ff6b1a] rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p class="font-black">0</p>
+                    <p class="favourite font-black">0</p>
                     <img class="h-[30px] w-[30px]" src="./assets/heart.png" alt="">
                 </div>
                 <div id="coin-amount"
                     class="flex bg-[#41ff6b1a] rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p id="available-balance" class="font-black">100</p>
+                    <p class="available-balance font-black">100</p>
                     <img class="h-[24px] w-[24px]" src="./assets/coin.png" alt="">
                 </div>
                 <div
                     class="flex font-bold text-white bg-green-500 rounded-3xl w-[120px] h-[50px] justify-center items-center gap-3">
-                    <p class="font-bold">2</p>COPY
+                    <p class="copy-count">0</p>
+                    <p>COPY</p>
                 </div>
             </div>
         </div>
@@ -93,10 +99,11 @@
                 <p class="text-lg text-[#5c5c5c] font-normal bg-[#f2f2f2] rounded-xl w-max text-center px-3">All</p>
             </div>
             <div class="flex gap-2 sm:gap-5">
-                <button
+                <button id="copy-emergency"
                     class="btn btn-outline border-gray-400 text-[#5c5c5c] w-[160px] sm:w-[175px] h-[40px] rounded-lg"><i
                         class="fa-regular fa-copy"></i> COPY</button>
-                <button class="btn btn-neutral bg-[#00a63e]  w-[160px] sm:w-[175px] h-[40px] rounded-lg border-none"><i
+                <button id="call-emergency"
+                    class="btn btn-neutral bg-[#00a63e]  w-[160px] sm:w-[175px] h-[40px] rounded-lg border-none"><i
                         class="fa-solid fa-phone"></i> CALL</button>
             </div>
         </div>
