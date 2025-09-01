@@ -10,6 +10,7 @@ Ans: To create a new element you use document.createElement() and to insert it u
 
 Ans: Event Bubbling is DOM mechanism where if a event is triggered
  it climbs upwards through it parent tag to reach the main document tag
+ 
 4.What is Event Delegation in JavaScript? Why is it useful?
 
 Ans: Event delegation is an easy way to attach a single parent element of many child element instead of adding event listener to every single child.It,s useful cause you can use only one event delegation to add multiple child tag through a parent tag.
