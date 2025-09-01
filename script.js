@@ -20,6 +20,8 @@ for (let i = 0; i < copyButtons.length; i++) {
         const copyCount = document.getElementById('copy-count')
         copyCount.innerText = parseInt(copyCount.innerText) + 1;
 
+        console.log(copyCount);
+
         const card = this.closest('.parent')
         if (!card)
             return;
@@ -34,19 +36,22 @@ for (let i = 0; i < copyButtons.length; i++) {
 
 // coin to call feature
 const callButton = document.querySelectorAll(".call-button")
-    .addEventListener('click', function (e) {
-        e.preventDefault()
-
+for (let i = 0; i < callButton.length; i++) {
+    callButton[i].addEventListener('click', function () {
         const availableBalance = parseInt(document.getElementById('available-balance').innerText)
+
+        const card = this.closest('.parent')
+        const name = card.querySelector('.call-name').innerText
+        const number = card.querySelector('.call-number').innerText
 
         if (availableBalance >= 20) {
             const remainingBalance = availableBalance - 20;
             document.getElementById('available-balance').innerText = remainingBalance
-            alert(`Calling ${name} - ${number} `)
+            alert(`Calling ${name} - ${number}`)
 
             const data = {
-                name: "National Emergency Number",
-                number: "999",
+                name: name,
+                number: number,
                 date: new Date().toLocaleTimeString()
             }
 
@@ -55,20 +60,24 @@ const callButton = document.querySelectorAll(".call-button")
         }
         else if (availableBalance < 20)
             alert("You don't have enough coins.Minimum 20 coins is required to call")
-
     })
+}
 
 
 //clear history
 
 document.getElementById("clear-all")
     .addEventListener("click", function () {
+        const clearButton = document.getElementById("call-history")
+        clearButton.innerText = ""
 
+        callingData.length = 0
     })
 
 // call history feature
-document.getElementById("call-emergency")
-    .addEventListener('click', function () {
+const callHistory = document.querySelectorAll(".call-button")
+for (let i = 0; i < callHistory.length; i++) {
+    callHistory[i].addEventListener('click', function () {
 
         const historyContainer = document.getElementById("call-history")
         historyContainer.innerText = ""
@@ -85,7 +94,7 @@ document.getElementById("call-emergency")
                 </div>
     `
             historyContainer.appendChild(div)
-
         }
 
     })
+}
