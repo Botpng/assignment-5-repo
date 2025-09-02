@@ -20,16 +20,16 @@ for (let i = 0; i < copyButtons.length; i++) {
         const copyCount = document.getElementById('copy-count')
         copyCount.innerText = parseInt(copyCount.innerText) + 1;
 
-        console.log(copyCount);
-
         const card = this.closest('.parent')
         if (!card)
             return;
 
-        const number = card.querySelector('.number')
+        const number = card.querySelector('.call-number')
         if (!number)
             return
         const numberElement = number.textContent.trim();
+        alert(`Number Copied-${numberElement}`)
+
         navigator.clipboard.writeText(numberElement)
     })
 }
